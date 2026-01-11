@@ -3,3 +3,36 @@ if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('/finance-wallet/service-worker.js');
 }
 </script>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Finance Wallet</title>
+
+<link rel="manifest" href="manifest.json">
+
+<style>
+body{
+  margin:0;
+  font-family:system-ui;
+  background:#0f172a;
+  color:white;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+}
+</style>
+</head>
+
+<body>
+<h1>💰 Finance Wallet</h1>
+
+<script>
+if('serviceWorker' in navigator){
+  navigator.serviceWorker.register('service-worker.js');
+}
+</script>
+</body>
+</html>
