@@ -1,5 +1,5 @@
 const CACHE = "finance-wallet-v1";
-const ASSETS = [
+const FILES = [
   "/finance-wallet/",
   "/finance-wallet/index.html",
   "/finance-wallet/manifest.json",
@@ -9,13 +9,12 @@ const ASSETS = [
 
 self.addEventListener("install", e => {
   e.waitUntil(
-    caches.open(CACHE).then(cache => cache.addAll(ASSETS))
+    caches.open(CACHE).then(c => c.addAll(FILES))
   );
 });
 
 self.addEventListener("fetch", e => {
   e.respondWith(
-    caches.match(e.request).then(res => res || fetch(e.request))
+    caches.match(e.request).then(r => r || fetch(e.request))
   );
 });
-
